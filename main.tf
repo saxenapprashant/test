@@ -12,8 +12,14 @@ provider "linux" {
     port     = 22
     user     = "ubuntu"
     password = "root123"
+    owner = 1000
+    group = 1000
+    mode = "755"
 }
 
 resource "linux_file" "unnatifile" {
     path = "/tmp/testdir"
+    owner = 1000
+    group = 1000
+    mode = "755"
 }
